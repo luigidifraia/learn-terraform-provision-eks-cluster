@@ -2,38 +2,40 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/hashicorp/aws" {
-  version     = "3.25.0"
-  constraints = ">= 2.68.0, >= 3.20.0, >= 3.22.0"
+  version     = "3.38.0"
+  constraints = ">= 2.24.0, >= 3.15.0, >= 3.20.0, >= 3.22.0, >= 3.30.0"
   hashes = [
-    "h1:oyaXLqVhtPnHDnwk2yU9qP4dTgfPHyuo27mX/ljeCTQ=",
-    "zh:2d3c65461bc63ec39bce7b5afdbed9a3b4dd5c2c8ee94616ad1866e24cf9b8f0",
-    "zh:2fb2ea6ccac30b909b603e183433737a30c58ec1f9a6a8b5565f0f051490c07a",
-    "zh:31a5f192c8cf29fb677cd639824f9a685578a2564c6b790517db33ea56229045",
-    "zh:437a12cf9a4d7bc92c9bf14ee7e224d5d3545cbd2154ba113ae82c4bb68edc27",
-    "zh:4bbdc3155a5dea90b2d50adfa460b0759c4dd959efaf7f66b2a0385a53b469b2",
-    "zh:63a8cd523ba31358692a34a06e111d88769576ac6d0e5adad8e0b4ae0a2d8882",
-    "zh:c4301ce86e8cb2c464949bb99e729ffe7b0c55eaf34b82ba526bb5039bca36f3",
-    "zh:c97b84861c6c550b8d2feb12d089660fffbf51dc7d660dcc9d54d4a7b3c2c882",
-    "zh:d6a103570e2d5c387b068fac4b88654dfa21d44ca1bdfa4bc8ab94c88effd71a",
-    "zh:f08cf2faf960a8ca374ac860f37c31c88ed2bab460116ac74678e0591babaac5",
+    "h1:qKEjN/EM56XT46vGY33eoq7nD6JuGqRqFp7tkzTrRM0=",
+    "zh:20476d4c1b0c0efc55226bcbd85fbd948638fd9860a0edcdb7875cbb2b449e46",
+    "zh:7102622e6549cc3fc46b9ad68cbf4c50b162ce1013d4da817d05d1edf1f12fae",
+    "zh:74ff7f1610065e14c043cd9d74b3d5e0de4474f09a1a81e0b126b920b5cf6a27",
+    "zh:800e1b168149d507d23845f7a8b7e598c7dc16d2ee0f47848cf85d3e7458884f",
+    "zh:81ac3c68d6230b77740ca367e0c05a32ebb9be0fe5478c836573218a84eb3e46",
+    "zh:86536598796ba65539816f08351ac0ab32988ab84fa8f100049579996fafc800",
+    "zh:b9985c64f0f0b5bafb7067a60381fd807f7c3dd952c5d9f531385e464867bdd5",
+    "zh:c19c692896469724c6320fa7d87532ec3935e14e0e0fa0a8a0f1cf28ae7a0b0a",
+    "zh:cb8b14f246953a275ada562f5275a0d1a4938b7d20597e62fabe264012410f53",
+    "zh:cdbfa0ad87ff4d7451cfb89e53692a651d4c9cadece6845e60d986fd454b52b3",
+    "zh:ed5c4c8ae5adda37942bb15ef058c0811a95cb4c87259ae822627756dcb90efc",
   ]
 }
 
 provider "registry.terraform.io/hashicorp/kubernetes" {
-  version     = "2.0.1"
+  version     = "2.1.0"
   constraints = ">= 1.11.1, >= 2.0.1"
   hashes = [
-    "h1:MlKp+R32gnNeODxsj30XigkGOTLXeEEsgT9xwCmi5xU=",
-    "zh:19a5656300f92e265b521a91b70fa822139589f5b53d7be5a990462b4bc93c8e",
-    "zh:2c1a8faffaa1cce16f651a60e02f26979772def6e1d30bf2efcb6daa343dbc36",
-    "zh:465d6b4c29c82a1b3ad9bbb16b35d2706ac120a24ea301f9d3fe155ad243ae3b",
-    "zh:4e32ff62f73732b629b66298a22884707a814e82d4025e04d08893ee0f9cf389",
-    "zh:7de1c9cf8524d2c2320dc18601aa20451a0a8ea31662fd54f5bbf125cf7b477b",
-    "zh:a5f8c5cd8c91eb27791261c07745e7143349594fd058278031a85e97fbbe830e",
-    "zh:a8f1b39f69e0dd29635ce5b1c88527ec5e4ef308a45088842e32ff825c32ab21",
-    "zh:ae8ce3e057f2645efca1fe10b65e9b80d60de37d8a8f01cb6e7ed19d12782be2",
-    "zh:cf1326f8e253b1cc27f8b4367696e07efc1020f9828ed56df17f5bb4e4bf65ad",
-    "zh:d3c1942e8cc5a1bbc84e89c9320bf55840ee079937003a0d6e245b3f9c744d55",
+    "h1:L/3XfqLQ4bS1PjH/FksJPm+MYIOxCwn97ozbfSwg/VQ=",
+    "zh:22e2bcef08fb7f97ed503a27e3725d9d14fdd09fe3aa144fae8a7f78ed27856a",
+    "zh:2380cc2a91239b80ea380af8a7fcdcc7396f5213a71a251a5505c962ac6cb9c2",
+    "zh:496ea2818d5480590ada763672be051f4e76dc12c6a61fde2faa0c909e174eb7",
+    "zh:4e5b6c230d9a8da8a0f12e5db198f158f2c26432ad8e1c6ac22770ce7ec39118",
+    "zh:55ad614beffda4cdc918ad87dca09bb7b961f12183c0923230301f73e23e9665",
+    "zh:6849c52899091fa2f6714d8e5180a4affffc4b2ad03dc2250043d4b32049e16e",
+    "zh:7a6f0d9da5172b3770af98d59263e142313a8b2c4048271893c6003493ad1c89",
+    "zh:7c97fb24e60c41fa16f6305620d18ae51545c329f46f92988493a4c51a4e43e5",
+    "zh:a08111c4898544c40c62437cc28798d1f4d7298f61ddaf3f48dddec042d3519f",
+    "zh:be7493bff6b9f95fe203c295bfc5933111e7c8a5f3bd9e9ae143a0d699d516f8",
+    "zh:e4c94adc65b5ad5551893f58c19e1c766f212f16220087ca3e940a89449ac285",
   ]
 }
 
@@ -75,7 +77,7 @@ provider "registry.terraform.io/hashicorp/null" {
 
 provider "registry.terraform.io/hashicorp/random" {
   version     = "3.0.0"
-  constraints = ">= 2.1.0, 3.0.0"
+  constraints = ">= 2.1.0, >= 2.2.0, 3.0.0"
   hashes = [
     "h1:yhHJpb4IfQQfuio7qjUXuUFTU/s+ensuEpm23A+VWz0=",
     "zh:0fcb00ff8b87dcac1b0ee10831e47e0203a6c46aafd76cb140ba2bab81f02c6b",
