@@ -1,12 +1,3 @@
-variable "region" {
-  default     = "eu-west-2"
-  description = "AWS region"
-}
-
-provider "aws" {
-  region = "eu-west-2"
-}
-
 data "aws_availability_zones" "available" {}
 
 # Sometimes it is handy to keep the same IPs even after the VPC is destroyed and re-created.
@@ -33,6 +24,10 @@ module "vpc" {
   reuse_nat_ips        = true               # <= Skip creation of EIPs for the NAT Gateways
   external_nat_ip_ids  = aws_eip.nat.*.id   # <= IPs specified here as input to the module
   enable_dns_hostnames = true
+
+  enable_ipv6                                    = true
+  private_subnet_assign_ipv6_address_on_creation = true
+  private_subnet_ipv6_prefixes                   = [0, 1, 2]
 
   tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
