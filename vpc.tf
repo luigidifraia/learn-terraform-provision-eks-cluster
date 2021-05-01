@@ -18,9 +18,19 @@ resource "random_string" "suffix" {
   special = false
 }
 
+# Sometimes it is handy to keep the same IPs even after the VPC is destroyed and re-created.
+# To that end, it is possible to assign existing IPs to the NAT Gateways.
+# This prevents the "targeted" destruction of the VPC from releasing those IPs, while making it possible that a re-created VPC uses the same IPs.
+# https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/2.32.0#external-nat-gateway-ips
+resource "aws_eip" "nat" {
+  count = 1
+
+  vpc = true
+}
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.66.0"
+  version = "3.0.0"
 
   name                 = "education-vpc"
   cidr                 = "10.0.0.0/16"
@@ -29,6 +39,8 @@ module "vpc" {
   public_subnets       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
   enable_nat_gateway   = true
   single_nat_gateway   = true
+  reuse_nat_ips        = true               # <= Skip creation of EIPs for the NAT Gateways
+  external_nat_ip_ids  = aws_eip.nat.*.id   # <= IPs specified here as input to the module
   enable_dns_hostnames = true
 
   tags = {
