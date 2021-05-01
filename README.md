@@ -6,3 +6,4 @@ Terraform configuration files to provision an EKS cluster on AWS.
 Custom additions:
 - allocates the Elastic IP outside the VPC module declaration
 - creates Transit Gateway resources
+- creates an RDS Aurora cluster

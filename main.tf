@@ -3,7 +3,11 @@ provider "aws" {
 }
 
 locals {
-  cluster_name = "education-eks-${random_string.suffix.result}"
+  vpc_name         = "education-vpc"
+  eks_cluster_name = "education-eks-${random_string.suffix.result}"
+  rds_name         = "education-rds-aurora"
+
+  database_name    = "education"
 }
 
 resource "random_string" "suffix" {
