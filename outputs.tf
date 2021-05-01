@@ -33,9 +33,14 @@ output "cluster_name" {
   value       = local.eks_cluster_name
 }
 
-output "db_endpoint" {
+output "db_cluster_endpoint" {
   description = "DB cluster endpoint."
   value       = module.db.rds_cluster_endpoint
+}
+
+output "db_cluster_port" {
+  description = "DB cluster port."
+  value       = module.db.rds_cluster_port
 }
 
 output "db_name" {
@@ -53,4 +58,9 @@ output "db_password" {
   description = "Master DB password."
   value       = module.db.rds_cluster_master_password
   sensitive   = true
+}
+
+output "s3_bucket_id" {
+  description = "Name of the bucket."
+  value       = module.bucket.s3_bucket_id
 }
