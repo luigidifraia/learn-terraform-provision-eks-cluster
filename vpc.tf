@@ -9,15 +9,6 @@ provider "aws" {
 
 data "aws_availability_zones" "available" {}
 
-locals {
-  cluster_name = "education-eks-${random_string.suffix.result}"
-}
-
-resource "random_string" "suffix" {
-  length  = 8
-  special = false
-}
-
 # Sometimes it is handy to keep the same IPs even after the VPC is destroyed and re-created.
 # To that end, it is possible to assign existing IPs to the NAT Gateways.
 # This prevents the "targeted" destruction of the VPC from releasing those IPs, while making it possible that a re-created VPC uses the same IPs.
