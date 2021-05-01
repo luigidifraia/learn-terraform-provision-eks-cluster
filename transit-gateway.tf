@@ -12,7 +12,6 @@ module "tgw" {
       vpc_id       = module.vpc.vpc_id
       subnet_ids   = module.vpc.private_subnets
       dns_support  = true
-      ipv6_support = true
 
       tgw_routes = [
         {
