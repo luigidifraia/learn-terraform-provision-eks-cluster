@@ -4,7 +4,9 @@ data "aws_iam_policy_document" "bucket_policy" {
 
     principals {
       type        = "AWS"
-      identifiers = [ module.eks.worker_iam_role_arn ]
+      identifiers = [
+        module.eks.worker_iam_role_arn,
+      ]
     }
 
     actions = [
@@ -13,7 +15,7 @@ data "aws_iam_policy_document" "bucket_policy" {
     ]
 
     resources = [
-      "arn:aws:s3:::${local.bucket_name}",
+      module.bucket.s3_bucket_arn,
     ]
   }
   statement {
