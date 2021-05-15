@@ -44,7 +44,7 @@ data "aws_iam_policy_document" "bucket_policy" {
 
     principals {
       type        = "AWS"
-      identifiers = [ module.eks.worker_iam_role_arn ]
+      identifiers = [ "*" ]
     }
 
     actions = [
