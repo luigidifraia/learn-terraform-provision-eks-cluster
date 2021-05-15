@@ -15,7 +15,7 @@ data "aws_iam_policy_document" "bucket_policy" {
     ]
 
     resources = [
-      module.bucket.s3_bucket_arn,
+      "arn:aws:s3:::${local.bucket_name}",
     ]
   }
   statement {
@@ -34,8 +34,33 @@ data "aws_iam_policy_document" "bucket_policy" {
     ]
 
     resources = [
-      "arn:aws:s3:::${local.bucket_name}/*",
+      "${module.bucket.s3_bucket_arn}/*",
     ]
+  }
+  statement {
+    sid = "AllowSSLRequestsOnly"
+
+    effect = "Deny"
+
+    principals {
+      type        = "AWS"
+      identifiers = [ module.eks.worker_iam_role_arn ]
+    }
+
+    actions = [
+      "s3:*"
+    ]
+
+    resources = [
+      module.bucket.s3_bucket_arn,
+      "${module.bucket.s3_bucket_arn}/*",
+    ]
+
+    condition {
+      test     = "Bool"
+      variable = "aws:SecureTransport"
+      values   = [ "false" ]
+    }
   }
 }
 
@@ -48,6 +73,14 @@ module "bucket" {
 
   attach_policy = true
   policy        = data.aws_iam_policy_document.bucket_policy.json
+
+  server_side_encryption_configuration = {
+    rule = {
+      apply_server_side_encryption_by_default = {
+        sse_algorithm     = "AES256"
+      }
+    }
+  }
 
   # S3 bucket-level Public Access Block configuration
   block_public_acls       = true
