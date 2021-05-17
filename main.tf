@@ -8,7 +8,11 @@ locals {
   rds_name         = "education-rds-aurora"
   bucket_name      = "education-bucket-${lower(random_string.suffix.result)}"
 
-  database_name      = "education"
+  database_name    = "education"
+
+  k8s_namespace    = "default"
+  role_name        = "educator"
+  policy_name      = "education"
 }
 
 resource "random_string" "suffix" {
